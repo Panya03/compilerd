@@ -1,4 +1,4 @@
-const { CPP, C, PYTHON, JAVA, NODEJS, RUBY, PROMPTV1, PROMPTV2 } = require('../enums/supportedLanguages')
+const { CPP, C, PYTHON, JAVA, NODEJS, RUBY, SWIFT, GO, PROMPTV1, PROMPTV2 } = require('../enums/supportedLanguages')
 const ONE_MB = 1024 // ulimit uses Kilobyte as base unit
 const ALLOWED_RAM = process.env.ALLOWED_RAM || 512
 
@@ -43,6 +43,20 @@ const LANGUAGES_CONFIG = {
         run: 'ruby solution.rb',
         timeout: 10,
         filename: 'solution.rb',
+        memory: ALLOWED_RAM * ONE_MB,
+    },
+    [SWIFT]: {
+        compile: 'swiftc solution.swift -o solution',
+        run: './solution',
+        timeout: 10,
+        filename: 'solution.swift',
+        memory: ALLOWED_RAM * ONE_MB,
+    },
+    [GO]: {
+        compile: 'go build -o solution solution.go',
+        run: './solution',
+        timeout: 10,
+        filename: 'solution.go',
         memory: ALLOWED_RAM * ONE_MB,
     },
     [PROMPTV1]: {
