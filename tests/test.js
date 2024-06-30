@@ -103,7 +103,7 @@ describe('Tests', () => {
                 expect(response).toHaveProperty('status', testCase.expectedResponse.status);
                 expect(response).toHaveProperty('data.error', testCase.expectedResponse.error);
             } catch (error) {
-                console.error(`Error for test case: ${testCase.name}`, error);
+                console.error(`Error for test case: ${testCase.name}`, error.message);
                 throw error;
             }
         }, 15000);
