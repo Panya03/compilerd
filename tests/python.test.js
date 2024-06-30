@@ -1,10 +1,15 @@
-test('Python Hello World Test', async () => {
-    const code = `
-        print("Hello, World!")
-    `;
-    const expectedOutput = 'Hello, World!\n'; 
-    const response = await axios.post(ENDPOINT, { code });
+const testCase = {
+  name: "python : hello world",
+  reqObject: {
+    language: "python",
+    code: "print('Hello, World!')",
+    input: ""
+  },
+  expectedResponse: {
+    val: "Hello, World!",
+    status: 200,
+    error: null
+  }
+};
 
-    expect(response.status).toBe(200);
-    expect(response.data.output).toBe(expectedOutput);
-});
+module.exports = testCase;
