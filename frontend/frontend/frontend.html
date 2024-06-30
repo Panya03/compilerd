@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Judge Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Code Judge</h1>
+        <form id="codeForm">
+            <textarea id="code" placeholder="Enter your code here..."></textarea>
+            <select id="language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="ruby">Ruby</option>
+                <option value="php">PHP</option>
+                <option value="go">Go</option>
+            </select>
+            <button type="submit">Run Code</button>
+        </form>
+        <pre id="output"></pre>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
