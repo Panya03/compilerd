@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "testing"
+)
 
-func main() {
-    fmt.Println("Hello, World!")
+func TestHelloWorld(t *testing.T) {
+  expected := "Hello, World!"
+  actual := fmt.Println("Hello, World!")
+  if actual != expected {
+    t.Errorf("Expected %s, got %s", expected, actual)
+  }
 }
